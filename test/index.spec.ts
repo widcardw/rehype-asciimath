@@ -5,7 +5,7 @@ import remarkMath from 'remark-math'
 import remarkRehype from 'remark-rehype'
 import rehypeParse from 'rehype-parse'
 import rehypeStringify from 'rehype-stringify'
-import rehypeKatex from '../src'
+import rehypeAsciimath from '../src'
 import katex from 'katex'
 
 describe('transform katex', () => {
@@ -14,7 +14,7 @@ describe('transform katex', () => {
       String(
         await unified()
           .use(rehypeParse, { fragment: true })
-          .use(rehypeKatex)
+          .use(rehypeAsciimath)
           .use(rehypeStringify)
           .process(
             [
@@ -47,7 +47,7 @@ describe('transform katex', () => {
           .use(remarkParse)
           .use(remarkMath)
           .use(remarkRehype)
-          .use(rehypeKatex)
+          .use(rehypeAsciimath)
           .use(rehypeStringify)
           .process(
             [
@@ -82,7 +82,7 @@ describe('transform katex', () => {
       String(
         await unified()
           .use(rehypeParse, {fragment: true})
-          .use(rehypeKatex)
+          .use(rehypeAsciimath)
           .use(rehypeStringify)
           .process(
             '<div class="math-display">\\begin{split}\n  f(-2) &= \\sqrt{-2+4} \\\\\n  &= x % Test Comment\n\\end{split}</div>'
@@ -110,7 +110,7 @@ describe('transform asciimath', () => {
       String(
         await unified()
           .use(rehypeParse, { fragment: true })
-          .use(rehypeKatex)
+          .use(rehypeAsciimath)
           .use(rehypeStringify)
           .process(
             [
@@ -143,7 +143,7 @@ describe('transform asciimath', () => {
           .use(remarkParse)
           .use(remarkMath)
           .use(remarkRehype)
-          .use(rehypeKatex)
+          .use(rehypeAsciimath)
           .use(rehypeStringify)
           .process(
             [

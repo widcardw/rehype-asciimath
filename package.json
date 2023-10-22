@@ -1,16 +1,48 @@
 {
   "name": "@widcardw/rehype-asciimath",
   "type": "module",
+  "private": "true",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Rehype plugin that transforms both KaTeX and Asciimath into HTML",
   "scripts": {
     "test": "vitest",
     "build": "tsup ./src/index.ts --format cjs,esm --dts --clean"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "widcardw <widcardw@foxmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/widcardw/rehype-asciimath#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/widcardw/rehype-asciimath.git"
+  },
+  "bugs": "https://github.com/widcardw/rehype-asciimath/issues",
+  "keywords": [
+    "rehype",
+    "rehype-plugin",
+    "asciimath"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "katex": "^0.16.9",
     "asciimath-parser": "^0.6.3",

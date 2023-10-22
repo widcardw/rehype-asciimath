@@ -9,8 +9,8 @@ import type { AsciiMathConfig } from 'asciimath-parser'
 import { AsciiMath } from 'asciimath-parser'
 
 type Options = Omit<KatexOptions, 'displayMode' | 'throwOnError'> & {
-  amConfig?: AsciiMathConfig
   amEnabled: boolean
+  amConfig?: AsciiMathConfig
 }
 
 const emptyOptions: Readonly<Options> = {
@@ -29,7 +29,7 @@ function isLatexCode(code: string): boolean {
  * Render elements with a `language-math` (or `math-display`, `math-inline`)
  * class with KaTeX.
  */
-export default function rehypeKatex(options?: Readonly<Options> | null) {
+export default function rehypeAsciimath(options?: Readonly<Options> | null) {
   const settings = Object.assign(emptyOptions, options)
   const am = settings.amEnabled ? new AsciiMath(settings.amConfig) : undefined
 
