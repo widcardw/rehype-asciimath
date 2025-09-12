@@ -1,7 +1,7 @@
 {
   "name": "@widcardw/rehype-asciimath",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rehype plugin that transforms both KaTeX and Asciimath into HTML",
   "scripts": {
     "test": "vitest",
